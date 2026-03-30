@@ -5,12 +5,12 @@ import shutil
 from pathlib import Path
 
 from .data import load_program_entries, read_csv_rows
+from .paths import templates_dir, thumbnails_dir
 
 
 IMAGE_SENTINEL = "[imported_image]"
-BASE_DIR = Path(__file__).resolve().parent.parent
-TEMPLATES_DIR = BASE_DIR / "templates"
-THUMBNAILS_DIR = BASE_DIR / "thumbnails"
+TEMPLATES_DIR = templates_dir()
+THUMBNAILS_DIR = thumbnails_dir()
 
 
 def generate_slides(template_path: str | Path, csv_path: str | Path, output_path: str | Path) -> Path:

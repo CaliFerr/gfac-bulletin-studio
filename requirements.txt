@@ -3,3 +3,4 @@ reportlab
 comtypes
 pillow
 pymupdf
+pyinstaller

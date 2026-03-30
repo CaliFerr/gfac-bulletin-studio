@@ -7,10 +7,10 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
 from .data import load_bulletin_sections
+from .paths import assets_dir
 
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-ASSETS_DIR = BASE_DIR / "assets"
+ASSETS_DIR = assets_dir()
 BACKGROUND_IMAGE = ASSETS_DIR / "lower_third_background.png"
 LOGO_IMAGE = ASSETS_DIR / "gfac_logo_white.png"
 HORIZON_FONT = ASSETS_DIR / "Horizon.otf"
