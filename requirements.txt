@@ -4,3 +4,7 @@ comtypes
 pillow
 pymupdf
 pyinstaller
+fastapi
+uvicorn
+jinja2
+python-multipart

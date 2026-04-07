@@ -20,6 +20,29 @@ python -m pip install -r requirements.txt
 python main.py
 ```
 
+## Run The Web Version
+
+The web version covers:
+
+- Program editing in the browser
+- CSV import and export
+- Bulletin PDF export
+- Lower thirds export
+
+Slides stay desktop-only because the current slide generator still depends on Microsoft PowerPoint on Windows.
+
+Start the web app with:
+
+```powershell
+python -m uvicorn web_app.main:app --reload
+```
+
+Then open:
+
+```text
+http://127.0.0.1:8000
+```
+
 ## Main Tools
 
 ### 1. Create Program
@@ -145,6 +168,16 @@ Meaning:
 - `small_subheading`: optional extra line
 
 The three section rows are used as section separators.
+
+## Web Notes
+
+- The web app writes temporary output files into `web_output`
+- Bulletin export downloads a PDF directly
+- Lower thirds export downloads a ZIP file of PNGs
+- The browser editor keeps the same three fixed sections:
+  - `Filipino Service`
+  - `Sabbath School`
+  - `Hour Of Worship`
 
 ## Build A Windows App
 

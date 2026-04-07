@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GFAC Bulletin Studio Web</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <div class="theme-bar">
+      <button id="themeToggleButton" class="btn btn-subtle theme-toggle" type="button">Dark Mode</button>
+    </div>
+
+    <section id="landingView" class="landing-view">
+      <div class="landing-card">
+        <div class="hero-badge">GFAC Bulletin Studio Web</div>
+        <h1>Build the program, then export the bulletin.</h1>
+        <p class="landing-copy">Start from a blank program or import an existing CSV, then save the CSV or generate the program PDF.</p>
+        <div class="landing-actions">
+          <button id="createProgramButton" class="btn btn-cyan">Create Program</button>
+          <button id="importCsvButton" class="btn btn-light">Import CSV</button>
+          <button id="desktopDownloadButton" class="btn btn-subtle">Download Desktop Version</button>
+          <input id="csvInput" type="file" accept=".csv" hidden>
+        </div>
+      </div>
+    </section>
+
+    <main id="editorView" class="editor-view hidden">
+      <header class="editor-top">
+        <div class="editor-top-copy">
+          <div class="hero-badge badge-dark">Program Editor</div>
+          <h2>Current Program</h2>
+          <p>Edit rows, save the CSV, or generate the bulletin PDF.</p>
+        </div>
+        <div class="editor-actions">
+          <button id="backToStartButton" class="btn btn-subtle">Back</button>
+          <button id="downloadCsvButton" class="btn btn-cyan">Save CSV</button>
+          <button id="bulletinButton" class="btn btn-green">Generate PDF</button>
+          <button id="desktopDownloadButtonTop" class="btn btn-subtle">Download Desktop Version</button>
+        </div>
+      </header>
+
+      <section class="editor-card">
+        <div class="card-head">
+          <h3>Program Sections</h3>
+          <button id="resetButton" class="btn btn-subtle">Reset</button>
+        </div>
+        <div id="sectionsRoot" class="sections-root"></div>
+      </section>
+    </main>
+  </div>
+
+  <template id="sectionTemplate">
+    <section class="section-card">
+      <div class="section-banner">
+        <div>
+          <h3 class="section-title"></h3>
+        </div>
+        <input class="section-time" type="text">
+      </div>
+      <div class="row-list"></div>
+      <button class="btn btn-subtle add-row-button" type="button">Add Row</button>
+    </section>
+  </template>
+
+  <template id="rowTemplate">
+    <article class="program-row" draggable="true">
+      <div class="drag-handle" title="Drag to reorder">:::</div>
+      <input class="row-input row-title" type="text" placeholder="Title">
+      <input class="row-input row-subheading" type="text" placeholder="Name / Subheading">
+      <input class="row-input row-small-subheading" type="text" placeholder="Extra / Small Subheading">
+      <button class="row-remove" type="button">Remove</button>
+    </article>
+  </template>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
